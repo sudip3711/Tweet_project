@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+    login
+{% endblock %}
+
+{% block content %}
+<div class="m-5 p-5 text-center bg-info-subtle card" style="width:25%">
+    <h1>Login</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class='btn btn-success' type="submit">Login</button>
+    </form>
+    <a href="{% url 'register' %}">Dont have an account?</a>
+
+</div>
+
+{% endblock %}
